@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require "knife-windows/version"
 
 Gem::Specification.new do |s|
-  s.name        = "knife-windows"
+  s.name        = "realityforge-knife-windows"
   s.version     = Knife::Windows::VERSION
   s.platform    = Gem::Platform::RUBY
   s.has_rdoc = true
