@@ -33,7 +33,7 @@ describe Chef::Knife::Winrm do
 
   before do
     @knife = Chef::Knife::Winrm.new
-    @knife.config[:attribute] = "fqdn"
+    @knife.config[:address_attribute] = "fqdn"
     @node_foo = Chef::Node.new
     @node_foo.automatic_attrs[:fqdn] = "foo.example.org"
     @node_foo.automatic_attrs[:ipaddress] = "10.0.0.1"

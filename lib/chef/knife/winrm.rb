@@ -35,7 +35,7 @@ class Chef
 
       banner "knife winrm QUERY COMMAND (options)"
 
-      option :attribute,
+      option :address_attribute,
         :short => "-a ATTR",
         :long => "--attribute ATTR",
         :description => "The attribute to use for opening the connection - default is fqdn",
@@ -84,7 +84,7 @@ class Chef
                  q = Chef::Search::Query.new
                  @action_nodes = q.search(:node, @name_args[0])[0]
                  @action_nodes.each do |item|
-                   i = format_for_display(item)[config[:attribute]]
+                   i = format_for_display(item)[config[:address_attribute]]
                    r.push(i) unless i.nil?
                  end
                  r
@@ -93,9 +93,11 @@ class Chef
           if @action_nodes.length == 0
             ui.fatal("No nodes returned from search!")
           else
+            p format_for_display(@action_nodes[0])#['fqdn']
+            p @action_nodes[0]
             ui.fatal("#{@action_nodes.length} #{@action_nodes.length > 1 ? "nodes":"node"} found, " +
-                     "but does not have the required attribute (#{config[:attribute]}) to establish the connection. " +
-                     "Try setting another attribute to open the connection using --attribute.")
+                     "but does not have the required attribute (#{config[:address_attribute]}) to establish the connection. " +
+                     "Try setting another attribute to open the connection using --address_attribute.")
           end
           exit 10
         end
