@@ -54,7 +54,7 @@ describe Chef::Knife::Winrm do
         @node_bar.automatic_attrs[:fqdn] = nil
         Chef::Search::Query.stub!(:new).and_return(@query)
       end
-    
+
       it "should raise a specific error (KNIFE-222)" do
         @knife.ui.should_receive(:fatal).with(/does not have the required attribute/)
         @knife.should_receive(:exit).with(10)
@@ -62,4 +62,4 @@ describe Chef::Knife::Winrm do
       end
     end
   end
-end  
+end

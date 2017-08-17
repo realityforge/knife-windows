@@ -30,7 +30,7 @@ end
 
 def windows2012?
   is_win2k12 = false
-  
+
   if  windows?
     this_operating_system = WMI::Win32_OperatingSystem.find(:first)
     os_version = this_operating_system.send('Version')
@@ -56,8 +56,7 @@ end
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
-  
+
   config.filter_run_excluding :windows_only => true unless windows?
   config.filter_run_excluding :windows_2012_only => true unless windows2012?
 end
-

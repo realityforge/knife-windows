@@ -87,7 +87,7 @@ cscript /nologo <%= bootstrap_directory %>\wget.vbs /url:"%REMOTE_SOURCE_MSI_URL
 @rem Work around issues found in Windows Server 2012 around job objects not respecting WSMAN memory quotas
 @rem that cause the MSI download process to exceed the quota even when it is increased by administrators.
 @rem Retry the download using a more memory-efficient mechanism that only works if PowerShell is available.
-@if ERRORLEVEL 1 (      
+@if ERRORLEVEL 1 (
     echo Warning: Failed to download "%REMOTE_SOURCE_MSI_URL%" to "%LOCAL_DESTINATION_MSI_PATH%"
     echo Warning: Retrying download with PowerShell if available
     if EXIST "%LOCAL_DESTINATION_MSI_PATH%" del /f /q "%LOCAL_DESTINATION_MSI_PATH%"
@@ -124,4 +124,3 @@ cscript /nologo <%= bootstrap_directory %>\wget.vbs /url:"%REMOTE_SOURCE_MSI_URL
 )
 
 <%= start_chef %>
-

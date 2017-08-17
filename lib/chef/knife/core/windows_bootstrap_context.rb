@@ -143,7 +143,7 @@ param(
    [String] $localPath
 )
 
-$webClient = new-object System.Net.WebClient; 
+$webClient = new-object System.Net.WebClient;
 
 $webClient.DownloadFile($remoteUrl, $localPath);
 WGET_PS
