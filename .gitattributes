@@ -2,8 +2,10 @@
 * -text
 *.erb text
 *.gemspec text
+*.md text
 *.rb text
 *.rdoc text
+.gitattributes text
 .gitignore text
 .ruby-version text
 CHANGELOG text
