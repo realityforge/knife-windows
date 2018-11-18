@@ -6,7 +6,6 @@ Gem::Specification.new do |s|
   s.name        = "realityforge-knife-windows"
   s.version     = Knife::Windows::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.has_rdoc = true
   s.extra_rdoc_files = ["README.rdoc", "LICENSE" ]
   s.authors     = ["Seth Chisamore"]
   s.email       = ["schisamo@opscode.com"]
